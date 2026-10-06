@@ -97,7 +97,7 @@ SOURCES_AND_LICENSES.md            سجل المصادر والأدوات وال
 ```bash
 cd backend
 pip install -r requirements.txt
-export GEMINI_API_KEY=...            # مفتاحك الخاص، لا يُرفع إلى المستودع
+export GEMINI_API_KEY=...            
 export DATA_PATH=LastRAG_dataset.csv
 export MIN_RERANK_SCORE=10           # عتبة الامتناع المعايَرة
 uvicorn main:app --port 8000
