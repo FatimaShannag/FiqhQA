@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>FiqhQA | إجابات فقهية موثَّقة المصدر</title>
+  <meta name="description" content="FiqhQA إطار هجين للتوليد المعزَّز بالاسترجاع يُسند كل إجابة فقهية إلى كتابها وبابها ومرجعها. معمل AIDA، جامعة الأمير سلطان.">
+  <meta name="theme-color" content="#0B2F2A">
+  <meta property="og:title" content="FiqhQA | إجابات فقهية موثَّقة المصدر">
+  <meta property="og:description" content="استرجاع هجين + إعادة ترتيب + توليد مقيَّد بالمصدر، مع الامتناع عن الإجابة عند غياب السند.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B2F2A'/%3E%3Cg fill='none' stroke='%23C9A04F' stroke-width='3'%3E%3Crect x='17' y='17' width='30' height='30'/%3E%3Crect x='17' y='17' width='30' height='30' transform='rotate(45 32 32)'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=8">
+</head>
+<body>
+<a class="skip" href="#demo">انتقل إلى العرض الحي</a>
+
+<!-- ============ الشريط العلوي ============ -->
+<header class="topbar" id="topbar">
+  <div class="wrap topbar__inner">
+    <a href="#top" class="brand" aria-label="FiqhQA الصفحة الرئيسية">
+      <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3"><rect x="17" y="17" width="30" height="30"/><rect x="17" y="17" width="30" height="30" transform="rotate(45 32 32)"/></g></svg>
+      <span>FiqhQA</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="أقسام الصفحة">
+      <a href="#problem">المشكلة</a>
+      <a href="#how">آلية العمل</a>
+      <a href="#demo">العرض الحي</a>
+      <a href="#results">النتائج</a>
+      <a href="#data">البيانات</a>
+      <a href="#safety">الضوابط</a>
+      <a href="#team">الفريق</a>
+      <a href="#sanad-agent">سند</a>
+    </nav>
+    <a href="#demo" class="btn btn--gold btn--sm topbar__cta">جرّب الآن</a>
+    <button class="menu" id="menuBtn" aria-label="فتح القائمة" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ Hero ============ -->
+<section class="hero">
+  <svg class="hero__geo" viewBox="0 0 600 600" aria-hidden="true">
+    <g fill="none" stroke="currentColor" stroke-width="1.2">
+      <circle cx="300" cy="300" r="290"/>
+      <rect x="95" y="95" width="410" height="410"/>
+      <rect x="95" y="95" width="410" height="410" transform="rotate(45 300 300)"/>
+      <rect x="170" y="170" width="260" height="260"/>
+      <rect x="170" y="170" width="260" height="260" transform="rotate(45 300 300)"/>
+      <circle cx="300" cy="300" r="82"/>
+    </g>
+  </svg>
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <p class="hero__lab">معمل الذكاء الاصطناعي وتحليلات البيانات (AIDA)، جامعة الأمير سلطان</p>
+      <h1 class="hero__title">FiqhQA</h1>
+      <p class="hero__lead">إجابات فقهية موثَّقة المصدر،<br>لا مجرد إجابات مقنعة.</p>
+      <p class="hero__sub">إطار هجين للتوليد المعزَّز بالاسترجاع (Hybrid RAG) يُسند كل إجابة إلى كتابها وبابها ومرجعها من مصدر فقهي كلاسيكي، ويمتنع عن الإجابة حين لا يجد سندًا كافيًا.</p>
+      <div class="hero__actions">
+        <a href="#demo" class="btn btn--gold">جرّب العرض الحي</a>
+        <a href="#results" class="btn btn--ghost">النتائج</a>
+      </div>
+    </div>
+
+    <figure class="sheet" aria-label="مثال لإجابة موثقة من FiqhQA">
+      <p class="sheet__q">كم مدة المسح على الخفين؟ مع الدليل</p>
+      <div class="sheet__a">
+        <p>يوم وليلة للمقيم، وثلاثة أيام بلياليها للمسافر؛ لحديث علي بن أبي طالب رضي الله عنه (أخرجه مسلم)، وحديث صفوان بن عسّال.</p>
+        <p class="sheet__cite">(كتاب الطهارة - باب المسح على الخفين وما في معناهما من الحوائل)</p>
+      </div>
+      <ol class="sheet__trace" aria-label="مسار الاسترجاع">
+        <li>BM25</li><li>E5</li><li>RRF</li><li>إعادة ترتيب</li><li>توليد</li>
+      </ol>
+    </figure>
+  </div>
+
+  <div class="wrap">
+    <dl class="hero__facts">
+      <div><dt>الهلوسة</dt><dd><s>61.3%</s> <b>13.5%</b></dd></div>
+      <div><dt>BERTScore</dt><dd><b>0.890</b></dd></div>
+      <div><dt>عدم الصلة</dt><dd><b>0.000</b></dd></div>
+      <div><dt>زوج سؤال وجواب</dt><dd><b>1,140</b></dd></div>
+    </dl>
+    <p class="hero__note">أفضل نتائج الإطار مع Gemini على جزء الاختبار، مقارنة بالنموذج وحده دون استرجاع.</p>
+  </div>
+</section>
+
+<!-- ============ المشكلة ============ -->
+<section class="sec" id="problem">
+  <div class="wrap">
+    <header class="sec__head">
+      <p class="kicker">المشكلة</p>
+      <h2>النماذج اللغوية وحدها لا تكفي في المسائل الفقهية</h2>
+    </header>
+    <div class="problem">
+      <div class="problem__fig">
+        <p class="bignum">61.3%</p>
+        <p>معدل الهلوسة لدى Gemini 2.5 Flash حين يجيب عن أسئلة FiqhQA دون أي استرجاع.</p>
+      </div>
+      <ul class="problem__list">
+        <li><h3>الهلوسة</h3><p>أحكام تبدو مقنعة لكنها بلا سند من المصادر.</p></li>
+        <li><h3>غياب التتبّع</h3><p>لا يُعرف من أين جاء الحكم، ولا كيف يُتحقَّق منه.</p></li>
+        <li><h3>الخروج عن السؤال</h3><p>إجابات مطوّلة تتجاوز نطاق المسألة؛ بلغ عدم الصلة 33.4% لدى Gemini دون استرجاع.</p></li>
+      </ul>
+    </div>
+    <div class="gap">
+      <h3>الفجوة: الحلول الحالية لا تربط الإجابة بمصدرها الفقهي الأصيل</h3>
+      <p>مجموعات الفتاوى مثل Islamic Fatwas وAFTINA مأخوذة من مواقع إلكترونية لا من كتب الفقه المعتمدة، ومجموعة Hajj-FQA تقتصر على فتاوى الحج، ونظام MufassirQAS اعتمد أساسًا على ترجمات وتفاسير تركية لا على النص العربي الأصلي.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ الحل ============ -->
+<section class="sec sec--grey" id="solution">
+  <div class="wrap">
+    <header class="sec__head">
+      <p class="kicker">الحل</p>
+      <h2>خط استرجاع فقهي يُسند كل إجابة إلى كتابها وبابها ومرجعها</h2>
+      <p class="sec__intro">لا يعتمد FiqhQA على ما يحفظه النموذج. يسترجع أولًا النصوص الفقهية ذات الصلة من مصدر كلاسيكي، ثم يُلزم النموذج بالإجابة منها وحدها وذكر المرجع.</p>
+    </header>
+    <div class="contrib">
+      <article>
+        <h3>مجموعة بيانات FiqhQA</h3>
+        <p>1,140 زوج سؤال وجواب من كتاب فقهي كلاسيكي، كل إجابة مرتبطة بكتابها وبابها ومرجعها.</p>
+      </article>
+      <article>
+        <h3>استرجاع هجين للفقه</h3>
+        <p>دمج المطابقة اللفظية BM25 مع التضمينات الدلالية عبر RRF، ثم إعادة ترتيب بمُرمِّز متقاطع عربي، مع موجِّه يُلزم بذكر المصدر.</p>
+      </article>
+      <article>
+        <h3>قياس أثر الاسترجاع</h3>
+        <p>قياس كمّي لانخفاض الهلوسة وعدم الصلة في مجال الفقه، عبر نموذجين وسبعة مقاييس.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ آلية العمل ============ -->
+<section class="sec" id="how">
+  <div class="wrap">
+    <header class="sec__head">
+      <p class="kicker">آلية العمل</p>
+      <h2>من السؤال إلى إجابة موثَّقة المصدر</h2>
+    </header>
+
+    <ol class="flow" aria-label="مراحل خط FiqhQA">
+      <li class="flow__step flow__step--dark"><b>سؤال المستخدم</b><span>بعد التطبيع: حذف التشكيل وتوحيد الألف والتاء المربوطة</span></li>
+      <li class="flow__step flow__step--split">
+        <div><b>BM25</b><span>مطابقة لفظية، أعلى 30</span></div>
+        <div><b>E5 + FAISS</b><span>تشابه دلالي، أعلى 30</span></div>
+      </li>
+      <li class="flow__step"><b>دمج RRF</b><span>بالرتب فقط، k = 60</span></li>
+      <li class="flow__step"><b>إعادة الترتيب</b><span>مُرمِّز متقاطع عربي، أفضل 5 نصوص</span></li>
+      <li class="flow__step"><b>التوليد</b><span>موجِّه عربي منظَّم مع نموذج لغوي</span></li>
+      <li class="flow__step flow__step--green"><b>الإجابة</b><span>مع الكتاب والمرجع، أو امتناع وإحالة</span></li>
+    </ol>
+
+    <div class="how-grid">
+      <div class="how-why">
+        <h3>لماذا الهجين؟</h3>
+        <p>المصطلح الفقهي الدقيق يحتاج مطابقة لفظية، والمعنى يحتاج تمثيلًا دلاليًا، والمُرمِّز المتقاطع يقيِّم السؤال والنص معًا ليلتقط الفروق الدقيقة في الصياغة.</p>
+        <h3>النموذج يجيب من النص المسترجَع وحده</h3>
+        <p>يتقمّص النموذج دور فقيه متخصص يجيب بالعربية الفصحى بأسلوب علمي موجز، معتمدًا على النصوص المسترجَعة لا على معرفته المخزَّنة، ويذكر الكتاب والمرجع بين قوسين في نهاية الإجابة. إن كان السند المسترجَع ضعيفًا، يمتنع النظام عن الإجابة.</p>
+      </div>
+      <div class="formula">
+        <p class="formula__title">دمج الرتب المتبادل</p>
+        <p class="formula__eq" dir="ltr">RRF(d) = Σ 1 / (k + rank(d))</p>
+        <p>لا يحتاج تطبيع الدرجات ولا ضبط أوزان لكل مسترجِع.</p>
+        <dl class="specs">
+          <div><dt>التضمين الدلالي</dt><dd dir="ltr">multilingual-e5-base</dd></div>
+          <div><dt>إعادة الترتيب</dt><dd dir="ltr">oddadmix/arabic-reranker</dd></div>
+          <div><dt>نماذج التوليد</dt><dd dir="ltr">SILMA-Kashif-2B-Instruct, Gemini 2.5 Flash</dd></div>
+          <div><dt>درجة الحرارة</dt><dd dir="rtl" style="text-align:left">0.2 مع Gemini، وتوليد حتمي مع SILMA</dd></div>
+          <div><dt>أعلى نصوص بعد إعادة الترتيب</dt><dd dir="ltr">5</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ العرض الحي ============ -->
+<section class="demo-sec" id="demo">
+  <div class="wrap">
+    <header class="sec__head sec__head--light">
+      <p class="kicker">العرض الحي</p>
+      <h2>اسأل، وشاهد من أين جاءت الإجابة</h2>
+    </header>
+
+    <div class="demo">
+      <div class="demo__bar">
+        <span class="mode" id="modeBadge">جارٍ فحص اتصال الخادم…</span>
+        <div class="seg" role="radiogroup" aria-label="إعداد التجربة">
+          <label><input type="radio" name="tab" value="0"><span>Gemini Baseline</span></label>
+          <label><input type="radio" name="tab" value="1"><span>SILMA Baseline</span></label>
+          <label><input type="radio" name="tab" value="2"><span>FiqhQA-RAG + SILMA</span></label>
+          <label><input type="radio" name="tab" value="3" checked><span>FiqhQA-RAG + Gemini</span></label>
+        </div>
+      </div>
+
+      <form class="ask" id="askForm" novalidate>
+        <label for="question" class="sr">اكتب سؤالك الفقهي</label>
+        <textarea id="question" rows="3" maxlength="500" placeholder="اكتب سؤالك الفقهي بالعربية، مثل: كم مدة المسح على الخفين؟"></textarea>
+        <div class="ask__row">
+          <div class="chips" id="chips" aria-label="أمثلة أسئلة"></div>
+          <button type="submit" class="btn btn--gold ask__btn" id="askBtn">اسأل FiqhQA</button>
+        </div>
+      </form>
+
+      <div class="out" id="out" aria-live="polite">
+        <div class="empty" id="empty">
+          <p>اختر سؤالًا من الأمثلة أو اكتب سؤالك. ستظهر هنا الإجابة، والنصوص التي استندت إليها، ومدى استنادها إلى المصدر.</p>
+        </div>
+      </div>
+
+      <p class="disclaimer" role="note">
+        <strong>تنبيه:</strong> FiqhQA مساعد معرفي بحثي يعرض ما ورد في المصادر المسترجَعة، وليس فتوى ولا بديلًا عن المفتي أو الجهات الشرعية الرسمية. للفتوى في مسألتك راجع أهل العلم المختصين.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ النتائج ============ -->
+<section class="sec" id="results">
+  <div class="wrap">
+    <header class="sec__head">
+      <p class="kicker">النتائج</p>
+      <h2>كل مقياس يتحسّن مع FiqhQA</h2>
+      <p class="sec__intro">إعدادان، نموذجان، سبعة مقاييس. قاعدة الاسترجاع من جزء التدريب فقط، والأسئلة من جزء الاختبار.</p>
+    </header>
+
+    <div class="res">
+      <figure class="chart" id="hallChart">
+        <figcaption>
+          <b>الهلوسة: من 61.3% إلى 13.5%</b>
+          <span class="legend"><i class="lg lg--gem"></i>Gemini <i class="lg lg--sil"></i>SILMA</span>
+        </figcaption>
+        <div class="bars">
+          <div class="bars__group"><div class="bars__pair"><span class="bar bar--gem" style="--v:61.3"><em>61.3%</em></span><span class="bar bar--sil" style="--v:45.3"><em>45.3%</em></span></div><p>النموذج وحده</p></div>
+          <div class="bars__group bars__group--win"><div class="bars__pair"><span class="bar bar--gem" style="--v:13.5"><em>13.5%</em></span><span class="bar bar--sil" style="--v:15.6"><em>15.6%</em></span></div><p>FiqhQA-RAG</p></div>
+        </div>
+      </figure>
+
+      <div class="res__side">
+        <div class="kpi"><p class="kpi__n">0.426 → 0.888</p><p>الاكتمال لدى Gemini من خط الأساس إلى FiqhQA-RAG</p></div>
+        <div class="kpi"><p class="kpi__n">0.000</p><p>عدم الصلة لدى النموذجين مع FiqhQA-RAG</p></div>
+        <div class="kpi"><p class="kpi__n">0.890</p><p>BERTScore لدى Gemini مع FiqhQA-RAG</p></div>
+      </div>
+    </div>
+
+    <div class="table-wrap" tabindex="0" role="region" aria-label="جدول النتائج الكامل">
+      <table class="tbl">
+        <caption>الأداء: النموذج وحده مقابل FiqhQA-RAG (↑ الأعلى أفضل، ↓ الأدنى أفضل)</caption>
+        <thead>
+          <tr><th>التجربة</th><th>النموذج</th><th>BERTScore ↑</th><th>الاكتمال ↑</th><th>الهلوسة ↓</th><th>عدم الصلة ↓</th><th>METEOR ↑</th><th>BLEU ↑</th><th>ROUGE ↑</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>النموذج وحده</td><td>SILMA</td><td>0.534</td><td>0.485</td><td>0.453</td><td>0.073</td><td>0.039</td><td>0.004</td><td>0.000</td></tr>
+          <tr><td>النموذج وحده</td><td>Gemini</td><td>0.535</td><td>0.426</td><td>0.613</td><td>0.334</td><td>0.073</td><td>0.012</td><td>0.003</td></tr>
+          <tr class="hl"><td>FiqhQA-RAG</td><td>SILMA</td><td>0.605</td><td>0.860</td><td>0.156</td><td>0.000</td><td>0.099</td><td>0.011</td><td>0.006</td></tr>
+          <tr class="hl hl--best"><td>FiqhQA-RAG</td><td>Gemini</td><td>0.890</td><td>0.888</td><td>0.135</td><td>0.000</td><td>0.231</td><td>0.118</td><td>0.006</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="lessons">
+      <div><h3>الاسترجاع الهجين هو مصدر القفزة</h3><p>ارتفع اكتمال SILMA من 0.485 إلى 0.860، واكتمال Gemini من 0.426 إلى 0.888، بفضل البحث الهجين وإعادة الترتيب.</p></div>
+      <div><h3>التخصص العربي وحده لا يكفي</h3><p>تفوّق Gemini على SILMA رغم تخصصه بالعربية؛ حجم النموذج والتعرّض للنص الفقهي الكلاسيكي عاملان حاسمان.</p></div>
+      <div><h3>المقاييس اللفظية تظلم العربية</h3><p>بقي ROUGE قريبًا من الصفر بسبب الغنى الصرفي وتعدد الصيغ الصحيحة للإجابة، فالمعوَّل عليه BERTScore والاكتمال.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ البيانات والمصادر ============ -->
+<section class="sec sec--grey" id="data">
+  <div class="wrap">
+    <header class="sec__head">
+      <p class="kicker">البيانات والمصادر</p>
+      <h2>من كتاب فقهي معتمد إلى مجموعة بيانات قابلة للتتبّع</h2>
+    </header>
+    <div class="source">
+      <p class="source__label">المصدر</p>
+      <p class="source__title">«الأسئلة والأجوبة الفقهية» للشيخ عبدالعزيز بن محمد السلمان</p>
+      <p class="source__via">عبر المكتبة الشاملة</p>
+    </div>
+    <dl class="dstats">
+      <div><dt>زوج سؤال وجواب</dt><dd>1,140</dd></div>
+      <div><dt>تقسيم: تدريب / اختبار</dt><dd>80 / 20</dd></div>
+      <div><dt>حقول لكل سجل</dt><dd>6</dd></div>
+      <div><dt>نصوص تُمرَّر للنموذج بعد إعادة الترتيب</dt><dd>5</dd></div>
+    </dl>
+    <ol class="prep">
+      <li><b>الاستخراج</b><span>الكتاب من المكتبة الشاملة بصيغة HTML في 7 ملفات</span></li>
+      <li><b>التنظيف</b><span>تحليل ملفات DOCX على مستوى document.xml لإزالة التنسيق والترويسات</span></li>
+      <li><b>الاستخلاص</b><span>استخراج أزواج س/ج بالتعبيرات النمطية وإزالة التكرار</span></li>
+      <li><b>التطبيع</b><span>حذف التشكيل وتوحيد الألف والتاء المربوطة، دون تجذيع</span></li>
+      <li><b>الفهرسة</b><span>فهرس BM25 وفهرس دلالي E5، مع اسم الكتاب والمرجع لكل نص</span></li>
+    </ol>
+    <p class="fields">حقول كل سجل: المعرّف، السؤال، الإجابة، رقم السؤال والملف، الكتاب، المرجع الفرعي.</p>
+    <p class="fields fields--muted">إتاحة البيانات: ينوي الفريق نشر مجموعة البيانات والشيفرة بعد التحقق من عدم وجود قيود ترخيص على النص المصدر.</p>
+  </div>
+</section>
+
+<!-- ============ الضوابط ============ -->
+<section class="sec" id="safety">
+  <div class="wrap">
+    <header class="sec__head">
+      <p class="kicker">الضوابط والمسؤولية</p>
+      <h2>مساعد معرفي، لا مُفتٍ</h2>
+      <p class="sec__intro">في مجال حساس كالفقه، ما يمتنع عنه النظام لا يقل أهمية عمّا يجيب به.</p>
+    </header>
+    <div class="safety">
+      <div>
+        <h3>ما يلتزم به FiqhQA</h3>
+        <ul class="ticks">
+          <li>يجيب من النصوص المسترجَعة وحدها، لا من معرفة النموذج المخزَّنة.</li>
+          <li>يذكر الكتاب والمرجع في نهاية كل إجابة.</li>
+          <li>يمتنع عن الإجابة حين يكون السند ضعيفًا.</li>
+          <li>يعرض النصوص المسترجَعة ومؤشر الاستناد ليتحقق المستخدم بنفسه.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>حدود النسخة الحالية، بوضوح</h3>
+        <ul class="dashes">
+          <li>الهلوسة انخفضت لكنها لم تصل إلى الصفر.</li>
+          <li>المصدر كتاب فقهي واحد؛ التوسع لمذاهب ومصادر أخرى مخطط له.</li>
+          <li>التقييم آلي على تقسيم واحد؛ التقييم بالتحقق المتقاطع k-fold مخطط له.</li>
+          <li>لم يُراجَع بعد من فقهاء مختصين؛ هذه المراجعة شرط قبل أي استخدام عام.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="roadmap">
+      <h3>نحو نظام فقهي أوسع وأكثر موثوقية</h3>
+      <ul>
+        <li><b>تقييم الفقهاء</b> مراجعة بشرية من متخصصين للدقة والسلامة العلمية</li>
+        <li><b>مصادر ومذاهب أوسع</b> كتب فقهية كلاسيكية أخرى ومذاهب متعددة</li>
+        <li><b>استدلال متعدد الأدلة</b> أحكام تستند إلى أكثر من مصدر</li>
+        <li><b>Agentic RAG</b> تخطيط الاسترجاع ديناميكيًا وتحسين الإجابة تكراريًا</li>
+        <li><b>التحقق المتقاطع</b> k-fold للتأكد من ثبات النتائج</li>
+        <li><b>إتاحة مفتوحة</b> نشر البيانات والشيفرة بعد التحقق من الترخيص</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ الفريق ============ -->
+<section class="sec sec--grey" id="team">
+  <div class="wrap">
+    <header class="sec__head">
+      <p class="kicker">الفريق</p>
+      <h2>معمل الذكاء الاصطناعي وتحليلات البيانات (AIDA)</h2>
+      <p class="sec__intro">كلية علوم الحاسب والمعلومات، جامعة الأمير سلطان، الرياض.</p>
+    </header>
+    <ul class="team">
+      <li><span class="team__av" aria-hidden="true">FA</span><b dir="ltr">Fatima AlShannaq</b><span>باحثة، معمل AIDA</span></li>
+      <li><span class="team__av" aria-hidden="true">FZ</span><b dir="ltr">Fetoun AlZahrani</b><span>باحثة، معمل AIDA</span></li>
+      <li><span class="team__av" aria-hidden="true">TS</span><b dir="ltr">Dr. Tanzila Saba</b><span>باحثة، معمل AIDA</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ سند ============ -->
+<section class="sec sec--dark-agent" id="sanad-agent">
+  <div class="wrap agent">
+    <header class="sec__head sec__head--light">
+      <p class="kicker">المساعد الصوتي</p>
+      <h2>تعرّف على سند</h2>
+      <p class="sec__intro">مساعد صوتي تعريفي يشرح فكرة FiqhQA، أقسام الموقع، النتائج، ودور فريق AIDA. مساعد تعريفي، وليس مفتيًا.</p>
+    </header>
+    <button type="button" class="agent__card" id="sanadStart" aria-label="ابدأ المحادثة مع سند">
+      <span class="agent__avatar" aria-hidden="true">سند</span>
+      <span class="agent__text">
+        <span class="agent__title">سند، دليلك الصوتي للمشروع</span>
+        <span class="agent__desc">اسأليه عن فكرة الموقع، آلية عمل FiqhQA، النتائج، البيانات، أو فريق AIDA.</span>
+      </span>
+      <span class="agent__cta" aria-hidden="true">تحدّث الآن</span>
+    </button>
+    <elevenlabs-convai agent-id="agent_4901m430affgfqeaddwv3cfpmd68" variant="expanded"></elevenlabs-convai>
+  </div>
+</section>
+
+<!-- ============ دعوة ============ -->
+<section class="cta">
+  <div class="wrap cta__inner">
+    <h2>الذكاء الاصطناعي في الفقه يجب أن يُري مصدره قبل أن يُسمِع جوابه.</h2>
+    <div class="cta__actions">
+      <a href="#demo" class="btn btn--gold">جرّب العرض الحي</a>
+      <!-- عدّلي البريد هنا -->
+      <a href="mailto:aidalab@psu.edu.sa?subject=FiqhQA" class="btn btn--ghost">تواصل مع الفريق</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__inner">
+    <p>FiqhQA، معمل AIDA، جامعة الأمير سلطان</p>
+    <p>نموذج بحثي للعرض. ليس مصدرًا للفتوى.</p>
+  </div>
+</footer>
+
+<script src="script.js?v=11"></script>
+<script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+</body>
+</html>

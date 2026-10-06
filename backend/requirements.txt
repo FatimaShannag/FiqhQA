@@ -1,0 +1,13 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+pydantic>=2
+requests
+numpy
+pandas
+scikit-learn
+rank-bm25
+faiss-cpu
+sentence-transformers
+transformers>=4.42
+accelerate
+torch
